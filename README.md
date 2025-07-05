@@ -4,11 +4,11 @@ This project builds a **data-driven, AI-powered framework** for **forecasting AT
 
 ---
 
-## 🎯 Project Objective
+## Project Objective
 
 The goal is to address challenges in traditional ATM replenishment models such as:
-- ❌ Overfilling → leads to locked capital and higher logistics costs
-- ❌ Underfilling → leads to cash-out situations and customer dissatisfaction
+- Overfilling → leads to locked capital and higher logistics costs
+- Underfilling → leads to cash-out situations and customer dissatisfaction
 
 We aim to:
 - Predict **daily cash withdrawal demand**
@@ -18,11 +18,10 @@ We aim to:
 
 ---
 
-## 🧱 Step-by-Step Project Breakdown
+## Step-by-Step Project Breakdown
 
-### 🧩 Step 1: Synthetic ATM Transaction Data Generation
+###  Step 1: Synthetic ATM Transaction Data Generation
 
-📁 **File:** `utils/generate_synthetic_data.py`
 
 - Simulates daily withdrawal data for 100 ATMs over 2024.
 - ATM categories: Urban, Semi-Urban, Rural; Full-Service & Kiosks
@@ -35,14 +34,13 @@ We aim to:
   - Pre-defined date weights
   - Cluster-level adjustments
 
-📈 **Output:** `synthetic_atm_data.csv`  
-🗃️ Contains: `date`, `atm_id`, `location_type`, `atm_type`, `withdrawal_amount`
+**Output:** `synthetic_atm_data.csv`  
+🗃Contains: `date`, `atm_id`, `location_type`, `atm_type`, `withdrawal_amount`
 
 ---
 
-### 📊 Step 2: Exploratory Data Analysis (EDA)
+### Step 2: Exploratory Data Analysis (EDA)
 
-📁 **Notebook:** `01_EDA_and_Clustering.ipynb`
 
 - Analyzes withdrawal trends by:
   - ATM type (kiosk/full-service)
@@ -54,17 +52,16 @@ We aim to:
   - K-Means or manual tagging
 - Outputs ATM categories for targeted forecasting
 
-📊 Visualizations:
+Visualizations:
 - Line plots of withdrawal volume per cluster
 - Boxplots for weekday and month variations
 - Heatmaps for correlation analysis
 
 ---
 
-### 🧠 Step 3: Time Series Forecasting
+### Step 3: Time Series Forecasting
 
-#### 📌 (a) Auto ARIMA Modeling  
-📁 **Notebook:** `02_ARIMA_Modeling.ipynb`
+#### (a) Auto ARIMA Modeling  
 
 - Applies `auto_arima()` from `pmdarima` on individual ATM or cluster-level series
 - Trains models using:
@@ -78,8 +75,7 @@ We aim to:
 
 ---
 
-#### 📌 (b) SARIMAX Modeling with Exogenous Variables  
-📁 **Notebook:** `03_SARIMAX_Modeling.ipynb`
+#### (b) SARIMAX Modeling with Exogenous Variables  
 
 - Exogenous (X) features include:
   - `is_salary_day` (binary)
@@ -88,16 +84,14 @@ We aim to:
 - Uses `statsmodels.tsa.statespace.SARIMAX`
 - Improved accuracy in salary/festival-affected ATMs
 
-🔍 Visual Outputs:
+  Visual Outputs:
 - Actual vs Predicted plots
 - Residuals analysis
 - Forecast confidence intervals
 
 ---
 
-### 🧠 Step 4: Reinforcement Learning for Scheduling (Optional)
-
-📁 **Notebook:** `04_RL_Agent_Scheduling.ipynb`
+###  Step 4: Reinforcement Learning for Scheduling (Optional)
 
 - Builds a **Q-learning agent** to decide:
   - When to replenish ATM
@@ -108,13 +102,13 @@ We aim to:
   - Penalty for cash-outs
   - Cost for unnecessary refills
 
-🧪 Trained with simulated data over 365 episodes (days)
+ Trained with simulated data over 365 episodes (days)
 
 ---
 
-### 📊 Step 5: Model Comparison & Evaluation
+###  Step 5: Model Comparison & Evaluation
 
-📁 In each modeling notebook:
+ In each modeling notebook:
 
 - Compare Auto ARIMA vs SARIMAX:
   - Accuracy on test set
