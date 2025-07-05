@@ -1,4 +1,4 @@
-# Time-Series-Based-ATM-Cash-Replenishment
+# Time Series Based ATM Cash Replenishment
 
 This project builds a **data-driven, AI-powered framework** for **forecasting ATM cash withdrawals** and **optimizing replenishment schedules**. It combines **time series modeling**, **synthetic data generation**, **seasonality analysis**, and **reinforcement learning** to improve efficiency in ATM operations across India.
 
